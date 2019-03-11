@@ -5,12 +5,12 @@ import {
     REQUEST_ROBOTS_FAILED
 } from './contants';
 
-export const changeSearchField = (text) => ({
+export const changeSearchField = (text:string) => ({
  type:CHANGE_SEARCH_FIELD,
  payload: text
 });
 
-export const requestRobots = () => (dispatch) => {
+export const requestRobots:() => void = () => (dispatch:any) => {
     dispatch({type:REQUEST_ROBOTS_PENDING});
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response=> response.json())

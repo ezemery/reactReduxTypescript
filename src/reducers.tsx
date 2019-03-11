@@ -5,12 +5,11 @@ import {
     REQUEST_ROBOTS_FAILED
 } from './contants';
 
-
-const initialStateSearch = {
+const initialStateSearch:object = {
     searchField : ""
 };
 
-export const searchRobots = (state=initialStateSearch, action={}) => {
+export const searchRobots = (state:object=initialStateSearch, action:{type:string,payload:object}) => {
     switch(action.type){
         case CHANGE_SEARCH_FIELD:
             return Object.assign({}, state,{searchField:action.payload});
@@ -25,7 +24,7 @@ const initialStateRobots = {
     error: ""
 }
 
-export const requestRobots = (state=initialStateRobots, action={})=>{
+export const requestRobots = (state:object=initialStateRobots, action:{type:string,payload:object})=>{
     switch(action.type){
         case REQUEST_ROBOTS_PENDING:
             return Object.assign({}, state, {isPending:true});
